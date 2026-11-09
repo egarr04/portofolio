@@ -1,0 +1,14 @@
+[
+  {
+    "judul": "INVENTORY CRUD",
+    "deskripsi": "A simple web application for managing master goods/inventory data (Create, Read, Update, Delete) built with PHP and utilizing XML-based storage.",
+    "teknologi": ["Django", "JavaScript", "SQL"],
+    "link": "https://github.com/egarr04/Inventory-CRUD-Application-XML-Based-"
+  },
+  {
+    "judul": "ARTICLE MANAGEMENT",
+    "deskripsi": "A PHP-based web application designed to display dynamic data/information to users while providing a complete Content Management (CRUD) system to update and maintain the content whenever necessary.",
+    "teknologi": ["PHP", "MySQL"],
+    "link": "https://github.com/egarr04/Article-Management-Data-Visualization-Web-Application"
+  }
+]

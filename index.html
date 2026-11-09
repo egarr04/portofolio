@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M. Ega Rizky Rabbani | Web Developer & UI/UX</title>
+<meta name="description" content="Portofolio M. Ega Rizky Rabbani, lulusan Sistem Informasi dengan pengalaman UI/UX dan pengembangan web.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef2f4;
+    --surface: #ffffff;
+    --ink: #13293d;
+    --muted: #4f6272;
+    --line: #cfd9df;
+    --brand: #0f766e;
+    --mark: #f2b134;
+    --head: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    --body: "Source Sans 3", "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); }
+  a { color: var(--brand); }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--mark); outline-offset: 2px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
+  h1, h2, h3 { font-family: var(--head); line-height: 1.15; margin: 0; }
+  h2 { font-size: 1.75rem; margin-bottom: 1.25rem; }
+  h3 { font-size: 1.15rem; }
+  section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
+
+  header { padding: 1rem 0; }
+  nav { display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+  nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+  nav a { color: var(--ink); text-decoration: none; }
+  nav a:hover { color: var(--brand); }
+  .logo { font-family: var(--head); font-weight: 700; }
+
+  .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: center; padding: 3rem 0 4rem; }
+  .hero h1 { font-size: clamp(2.4rem, 6vw, 3.9rem); font-weight: 700; letter-spacing: -0.02em; }
+  .hero p { max-width: 34rem; color: var(--muted); margin: 1.25rem 0 1.75rem; }
+  .btn { display: inline-block; padding: 0.7rem 1.2rem; border-radius: 6px; font-weight: 600; text-decoration: none; border: 2px solid var(--ink); }
+  .btn.primary { background: var(--ink); color: #fff; }
+  .btn.ghost { color: var(--ink); margin-left: 0.5rem; }
+  .btn:hover { background: var(--mark); border-color: var(--mark); color: var(--ink); }
+
+  .log { background: #0e2233; color: #d8e6ee; border-radius: 8px; padding: 1rem 1.1rem; font: 0.875rem/1.7 ui-monospace, Consolas, monospace; }
+  .log h2 { font: 600 0.9rem var(--body); color: #9fb6c5; margin: 0 0 0.6rem; }
+  .log ul { list-style: none; margin: 0; padding: 0; }
+  .log li { display: flex; gap: 0.6rem; flex-wrap: wrap; border-top: 1px solid #1e3a50; padding: 0.35rem 0; }
+  .log .ok { color: #5eead4; } .log .bad { color: #fca5a5; } .log .ms { margin-left: auto; color: #9fb6c5; }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; list-style: none; }
+  .chips li { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.8rem; font-size: 0.95rem; }
+
+  .timeline { list-style: none; padding: 0; margin: 0; }
+  .timeline li { background: var(--surface); border-left: 4px solid var(--brand); padding: 0.9rem 1.1rem; margin-bottom: 0.9rem; border-radius: 0 6px 6px 0; }
+  .timeline small { color: var(--muted); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1.1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .card p { margin: 0; color: var(--muted); flex: 1; }
+  .card .tags { font-size: 0.9rem; color: var(--brand); font-weight: 600; }
+  .note { color: var(--muted); }
+  .error { color: #b42318; }
+
+  footer { border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted); }
+
+  @media (max-width: 760px) {
+    .hero, .two { grid-template-columns: 1fr; }
+    .btn.ghost { margin: 0.5rem 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Navigasi utama">
+      <span class="logo">Portofolio</span>
+      <ul>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#pengalaman">Pengalaman</a></li>
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <h1>M. Ega Rizky Rabbani</h1>
+      <p>Lulusan Sistem Informasi yang membangun antarmuka web dan aplikasi yang rapi, responsif, dan mudah dipakai. Saya sedang memperdalam integrasi REST API dan keamanan aplikasi.</p>
+      <a class="btn primary" href="#proyek">Lihat proyek</a>
+      <a class="btn ghost" href="#kontak">Hubungi saya</a>
+    </div>
+    <aside class="log" aria-live="polite">
+      <h2>Request yang dijalankan halaman ini</h2>
+      <ul id="log"><li>Menunggu request...</li></ul>
+    </aside>
+  </div>
+
+  <section id="tentang">
+    <div class="wrap two">
+      <div>
+        <h2>Tentang saya</h2>
+        <p>Saya lulusan S1 Sistem Informasi Universitas Pembangunan Jaya. Saya terbiasa mengerjakan desain UI/UX sampai implementasi web, dan pernah magang sebagai fullstack developer. Saya senang belajar hal baru dan mengerjakannya sampai tuntas.</p>
+      </div>
+      <div>
+        <h2>Keahlian</h2>
+        <ul class="chips">
+          <li>UI/UX</li><li>JavaScript</li><li>Django</li><li>PHP</li>
+          <li>HTML & CSS</li><li>REST API (belajar)</li>
+          <li>Excel</li><li>SQL</li><li>Tableau</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pengalaman">
+    <div class="wrap">
+      <h2>Pengalaman dan pendidikan</h2>
+      <ol class="timeline">
+        <li><h3>Fullstack Developer (magang)</h3>PT ITpro Citra Indonesia<br><small>2025</small></li>
+        <li><h3>Magang</h3>Biro Pendidikan Universitas Pembangunan Jaya<br><small>2024</small></li>
+        <li><h3>S1 Sistem Informasi</h3>Universitas Pembangunan Jaya<br><small>Lulus</small></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="proyek">
+    <div class="wrap">
+      <h2>Proyek</h2>
+      <div id="proyek-list" class="grid"><p class="note">Memuat proyek...</p></div>
+    </div>
+  </section>
+
+  <section id="github">
+    <div class="wrap">
+      <h2>Repository GitHub terbaru</h2>
+      <div id="repo-list" class="grid"><p class="note">Memuat repository...</p></div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="wrap">
+      <h2>Kontak</h2>
+      <p>Terbuka untuk magang dan kolaborasi.</p>
+      <p>
+        <a href="mailto:egarizkyrabbani2004@gmail.com">egarizkyrabbani2004@gmail.com</a><br>
+        <a href="https://id.linkedin.com/in/muhammad-ega-rizky-rabbani-bb76572b6" target="_blank" rel="noopener">LinkedIn</a> |
+        <a href="https://github.com/egarr04/" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">M. Ega Rizky Rabbani. Dibuat dengan HTML, CSS, dan JavaScript.</div></footer>
+
+<script>
+  // === Ganti nilai ini ===
+  const GITHUB_USER = "egarr04";
+
+  const log = document.getElementById("log");
+  let logStarted = false;
+
+  // fetch + catat method, URL, status, dan waktu ke panel di hero
+  async function tracked(url) {
+    if (!logStarted) { log.innerHTML = ""; logStarted = true; }
+    const li = document.createElement("li");
+    const t0 = performance.now();
+    let res;
+    try {
+      res = await fetch(url, { headers: { Accept: "application/json" } });
+    } catch (err) {
+      li.innerHTML = "<span>GET</span><span></span><span class='bad'>gagal</span>";
+      li.children[1].textContent = url;
+      log.appendChild(li);
+      throw err;
+    }
+    const ms = Math.round(performance.now() - t0);
+    li.innerHTML = "<span>GET</span><span></span><span></span><span class='ms'></span>";
+    li.children[1].textContent = url.replace("https://", "");
+    li.children[2].textContent = res.status;
+    li.children[2].className = res.ok ? "ok" : "bad";
+    li.children[3].textContent = ms + " ms";
+    log.appendChild(li);
+    if (!res.ok) throw new Error("Status " + res.status);
+    return res.json();
+  }
+
+  // semua teks dimasukkan lewat textContent agar aman dari XSS
+  function el(tag, text, cls) {
+    const n = document.createElement(tag);
+    if (text != null) n.textContent = text;
+    if (cls) n.className = cls;
+    return n;
+  }
+
+  function card(title, desc, meta, link, linkText) {
+    const c = el("article", null, "card");
+    c.append(el("h3", title), el("p", desc), el("span", meta, "tags"));
+    if (link && /^https?:\/\//.test(link)) {
+      const a = el("a", linkText);
+      a.href = link; a.target = "_blank"; a.rel = "noopener";
+      c.append(a);
+    }
+    return c;
+  }
+
+  async function muatProyek() {
+    const box = document.getElementById("proyek-list");
+    try {
+      const data = await tracked("projects.json");
+      box.replaceChildren(...data.map(p =>
+        card(p.judul, p.deskripsi, p.teknologi.join(", "), p.link, "Lihat proyek")));
+    } catch (e) {
+      box.replaceChildren(el("p", "Proyek belum bisa dimuat. Jalankan lewat Live Server atau hosting, bukan membuka file langsung.", "error"));
+    }
+  }
+
+  async function muatRepo() {
+    const box = document.getElementById("repo-list");
+    if (GITHUB_USER === "USERNAME_GITHUB") {
+      box.replaceChildren(el("p", "Isi GITHUB_USER di bagian script dengan username GitHub kamu.", "note"));
+      return;
+    }
+    try {
+      const url = "https://api.github.com/users/" + encodeURIComponent(GITHUB_USER) + "/repos?sort=updated&per_page=6";
+      const repos = await tracked(url);
+      if (!repos.length) { box.replaceChildren(el("p", "Belum ada repository publik.", "note")); return; }
+      box.replaceChildren(...repos.map(r =>
+        card(r.name, r.description || "Tanpa deskripsi", r.language || "-", r.html_url, "Buka di GitHub")));
+    } catch (e) {
+      box.replaceChildren(el("p", "Repository belum bisa dimuat (" + e.message + "). Coba lagi nanti.", "error"));
+    }
+  }
+
+  muatProyek();
+  muatRepo();
+</script>
+</body>
+</html>
